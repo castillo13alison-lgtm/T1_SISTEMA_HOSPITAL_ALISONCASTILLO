@@ -24,7 +24,6 @@ public class ControladorPaciente {
         }
 
         listaPacientes.add(p);
-        System.out.println("Paciente agregado correctamente.");
     }
     public void listarPacientes() {
 

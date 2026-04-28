@@ -18,9 +18,9 @@ public class T1_SistemaHospital_AlisonCastillo {
         int opcion;
 
         do {
-            System.out.println("\n--- MENU ---");
+            System.out.println("\n--- MENÚ ---");
             System.out.println("1. Registrar paciente");
-            System.out.println("2. Listar pacientes");
+            System.out.println("2. Lista de pacientes");
             System.out.println("3. Salir");
             System.out.print("Opcion: ");
             opcion = sc.nextInt();

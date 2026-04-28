@@ -70,11 +70,6 @@ public class Paciente {
             + "Tipo de sangre: " + tipoSangre + "\n"
             + "Alergias: " + alergias;
 }
-
-    public String mostrarAlertaMedica() {
-        return "Sangre: " + tipoSangre + " | Alergias: " + alergias;
-    }
-
     public String getNumeroDocumento() {
         return numeroDocumento;
     }
