@@ -26,17 +26,33 @@ public class ControladorPaciente {
         listaPacientes.add(p);
         System.out.println("Paciente agregado correctamente.");
     }
-
     public void listarPacientes() {
 
-        if (listaPacientes.isEmpty()) {
-            System.out.println("No hay pacientes registrados.");
-        } else {
-            for (Paciente p : listaPacientes) {
-                System.out.println(p.mostrarDatos());
-                System.out.println("------------------------");
-            }
+    if (listaPacientes.isEmpty()) {
+        System.out.println("No hay pacientes registrados.");
+    } else {
+
+        int contador = 1;
+
+        for (Paciente p : listaPacientes) {
+            System.out.println("     PACIENTE " + contador);
+            System.out.println("------------------------");
+            System.out.println(p.mostrarDatos());
+            System.out.println("------------------------");
+            contador++;
         }
     }
+    
+}
+
+    
+   public boolean existeDocumento(String documento) {
+    for (Paciente p : listaPacientes) {
+        if (p.getNumeroDocumento().equals(documento)) {
+            return true;
+        }
+    }
+    return false;
+} 
     
 }

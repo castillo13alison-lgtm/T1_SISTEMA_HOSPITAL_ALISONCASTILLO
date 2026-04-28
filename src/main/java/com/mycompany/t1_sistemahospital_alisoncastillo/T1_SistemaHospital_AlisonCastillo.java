@@ -42,19 +42,35 @@ public class T1_SistemaHospital_AlisonCastillo {
                         System.out.print("Segundo apellido: ");
                         String sApellido = sc.nextLine();
 
-                        System.out.print("Tipo documento: ");
+                        System.out.print("Tipo documento (DNI/CE): ");
                         String tipoDoc = sc.nextLine();
 
-                        // VALIDAR DNI
                         String numDoc;
                         while (true) {
-                            System.out.print("Numero documento (8 digitos): ");
+                            System.out.print("Numero documento: ");
                             numDoc = sc.nextLine();
-                            if (numDoc.matches("\\d{8}")) break;
-                            System.out.println("DNI inválido");
+                            if (tipoDoc.equals("DNI")) {
+                                if (!numDoc.matches("\\d{8}")) {
+                                    System.out.println("DNI debe tener 8 digitos");
+                                    continue;
+                                }
+                            } else if (tipoDoc.equals("CE")) {
+                                if (!numDoc.matches("\\d{9}")) {
+                                    System.out.println("Carnet de Extranjería debe tener 9 digitos");
+                                    continue;
+                                }
+                            } else {
+                                System.out.println("Tipo de documento inválido (use DNI o CE)");
+                                continue;
+                            }
+                            if (controlador.existeDocumento(numDoc)) {
+                                System.out.println("Este documento ya está registrado");
+                                continue;
+                            }
+                            break;
                         }
+                        
 
-                        // VALIDAR FECHA
                         String fecha;
                         while (true) {
                             System.out.print("Fecha nacimiento (dd/mm/aa): ");
@@ -69,7 +85,7 @@ public class T1_SistemaHospital_AlisonCastillo {
                         System.out.print("Alergias: ");
                         String alergias = sc.nextLine();
 
-                        // VALIDAR TELEFONO
+                        
                         String telefono;
                         while (true) {
                             System.out.print("Telefono (9 digitos): ");
@@ -78,7 +94,7 @@ public class T1_SistemaHospital_AlisonCastillo {
                             System.out.println("Telefono inválido");
                         }
 
-                        // VALIDAR CORREO
+                        
                         String correo;
                         while (true) {
                             System.out.print("Correo: ");
