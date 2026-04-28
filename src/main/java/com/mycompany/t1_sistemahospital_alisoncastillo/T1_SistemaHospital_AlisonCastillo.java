@@ -11,6 +11,7 @@ package com.mycompany.t1_sistemahospital_alisoncastillo;
 public class T1_SistemaHospital_AlisonCastillo {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        
     }
 }
