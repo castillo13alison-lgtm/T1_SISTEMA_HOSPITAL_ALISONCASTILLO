@@ -18,13 +18,13 @@ public class ControladorPaciente {
         // Validar duplicados por documento
         for (Paciente paciente : listaPacientes) {
             if (paciente.getNumeroDocumento().equals(p.getNumeroDocumento())) {
-                System.out.println("⚠ Paciente ya registrado.");
+                System.out.println("Paciente ya registrado.");
                 return;
             }
         }
 
         listaPacientes.add(p);
-        System.out.println("✅ Paciente agregado correctamente.");
+        System.out.println("Paciente agregado correctamente.");
     }
 
     public void listarPacientes() {
@@ -34,9 +34,9 @@ public class ControladorPaciente {
         } else {
             for (Paciente p : listaPacientes) {
                 System.out.println(p.mostrarDatos());
-                System.out.println(p.mostrarAlertaMedica());
                 System.out.println("------------------------");
             }
         }
     }
+    
 }

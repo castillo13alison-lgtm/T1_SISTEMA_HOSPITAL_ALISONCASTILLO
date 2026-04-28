@@ -40,7 +40,7 @@ public class Paciente {
         this.correo = correo;
     }
 
-    // VALIDACIONES
+    
     public boolean validarDocumento() {
         return numeroDocumento.length() >= 8;
     }
@@ -57,14 +57,19 @@ public class Paciente {
         return !tipoSangre.isEmpty() && !alergias.isEmpty();
     }
 
-    // MÉTODOS
     public String obtenerNombreCompleto() {
         return primerNombre + " " + segundoNombre + " " + primerApellido + " " + segundoApellido;
     }
 
     public String mostrarDatos() {
-        return obtenerNombreCompleto() + " | " + numeroDocumento + " | " + telefono + " | " + correo;
-    }
+    return "Nombre: " + obtenerNombreCompleto() + "\n"
+            + "Documento: " + numeroDocumento + "\n"
+            + "Fecha nacimiento: " + fechaNacimiento + "\n"
+            + "Telefono: " + telefono + "\n"
+            + "Correo: " + correo + "\n"
+            + "Tipo de sangre: " + tipoSangre + "\n"
+            + "Alergias: " + alergias;
+}
 
     public String mostrarAlertaMedica() {
         return "Sangre: " + tipoSangre + " | Alergias: " + alergias;
@@ -73,4 +78,7 @@ public class Paciente {
     public String getNumeroDocumento() {
         return numeroDocumento;
     }
+    public boolean validarFecha() {
+    return fechaNacimiento.matches("\\d{2}/\\d{2}/\\d{2}");
+}
 }
